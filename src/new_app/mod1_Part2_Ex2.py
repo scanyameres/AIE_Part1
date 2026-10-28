@@ -7,7 +7,7 @@ from new_app.config import get_client
 if __name__ == "__main__":
 
     client = get_client("OpenRouter")
-
+    MODEL = "openai/gpt-6-luna"
 
     USER_INPUT = "I was really happy with the gift!"
     CONTENT = """Classify the following text:
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     FINAL_PROMPT = CONTENT.format(PROMPT=USER_INPUT)
 
     response = client.chat.completions.create(
-        model="openai/gpt-6-luna",
+        model=MODEL,
         messages=[
             {"role": "user", "content": FINAL_PROMPT},
         ],
