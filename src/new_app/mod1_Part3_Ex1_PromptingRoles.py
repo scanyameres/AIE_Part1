@@ -1,3 +1,5 @@
+#https://developers.openai.com/api/docs/guides/prompt-engineering?api-mode=responses&lang=python&prompt-example=code
+
 from openai import OpenAI
 from new_app.config import get_client
 
@@ -36,3 +38,15 @@ print(response.output_text)
 #Pass the generated instructions and input directly to the Responses API.
 #Add representative fixtures, tests, and evaluation checks before changing production prompts.
 #Roll out prompt changes through your deployment system, using feature flags or configuration when you need staged releases.
+
+
+with open("src/new_app/mod1_Part3_Ex1_Prompt.txt", "r") as f:
+    instructions = f.read()
+
+response = client.responses.create(
+    model=MODEL,
+    instructions=instructions,
+    input="How would I declare a variable for a last name?",
+)
+
+print(response.output_text)
