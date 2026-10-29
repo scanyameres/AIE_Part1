@@ -11,3 +11,5 @@ wheels/
 
 # JavaScript projects
 node_modules/
+src/new_app/prompt_example.png
+

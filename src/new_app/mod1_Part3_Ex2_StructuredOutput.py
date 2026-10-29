@@ -21,3 +21,12 @@ response = client.beta.chat.completions.parse(
 
 print(response.choices[0].message.parsed)
 # Output: title='Dune' author='Frank Herbert' genre='Science Fiction' reading_time_minutes=2070
+
+
+
+client.chat.completions.create(
+    model="openai/gpt-6-luna",
+    messages=[...],
+    extra_body={"reasoning": {"effort": "high"}},  # low / medium / high / minimal / xhigh
+    max_tokens=1000,  # Cap total output tokens
+)

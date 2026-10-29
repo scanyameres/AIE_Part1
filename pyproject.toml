@@ -12,6 +12,7 @@ dependencies = [
     "requests>=2.34.2",
     "openai>=3.30.0",
     "IPython",
+    "tiktoken",
 ]
 
 [project.scripts]
